@@ -1,0 +1,9 @@
+<template name="MainLayout">
+	{{> Header }}
+	{{> SideNav}}
+	<main class="main-layout">
+		<div class="billboard">
+			{{> Template.dynamic template=main}}
+		</div>
+	</main>
+</template>
