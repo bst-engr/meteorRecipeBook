@@ -3,6 +3,9 @@ Recipes = new Mongo.Collection('recipes'); //initliazing a collection
 Recipes.allow({
 	insert: function (userId, doc) {
 		return !!userId;
+	},
+	update: function (userId, doc) {
+		return !!userId;	
 	}
 });
 //Defining Ingredient schema
@@ -57,7 +60,21 @@ RecipeSchema = new SimpleSchema ({
 			type: "hidden"
 		}
 	}
-})
+});
+
+Meteor.methods({
+	toggleMenuItem: function (id, currentState) {
+		Recipes.update(id, {
+			$set:{
+				inMenu: !currentState
+			}
+		});
+	},
+	//delete recipe function
+	deleteRecipe: function (id) {
+		Recipes.remove(id);
+	}
+});
 
 //attaching scehma to collection
 Recipes.attachSchema (RecipeSchema);

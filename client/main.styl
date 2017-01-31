@@ -99,20 +99,23 @@ header
 
 p
     color #333 
+    font-size .75em
 
 .page-title
     text-transform uppercase
     text-align center
     margin-bottom 30px 
+    color dark-purp
 
 .billboard
-    background none
+    background none;
     color #FFF
     font-size 2em
-    text-align center
     padding 60px 
     h2
         margin 0
+    a
+        font-size .5em
 
 .main-layout
     lost-center 90%
@@ -139,6 +142,7 @@ p
         top 0
         right 0
         padding 20px   
+        color black
     label
         display block
         margin-bottom 10px 
@@ -312,39 +316,42 @@ input, select, textarea
                 border-left 10px solid teal
 
 .recipe
-    background #FFF 
+    background #FFF
+    text-align left 
     padding 0 20px 20px
     margin-bottom 20px
     position relative 
     z-index 1
     shadow-level(1)
     trans()
-    .remove-from-menu
+    .btn-primary
+        display block
+    .btn-deny
         display none
     &.in-menu
         background teal
         color #FFF
         h3
             border-bottom: rgba(255,255,255, 0.6) solid 3px
-        .add-to-menu
-            display none
-        .remove-from-menu  
+        .btn-primary, .btn-deny
             display block
     h3
-        font-size: 3em;
+        font-size: 2em;
         opacity: 0.3;
         border-bottom: rgba(0,0,0, 0.3) solid 3px
         margin-top 0
         margin-bottom 10px 
+        color #333
+
     button
         margin-top 20px 
-    .fa-trash
+    .fa-trash, .fa-pencil
         opacity 0.3
         cursor pointer
         position absolute
         top 0
         right 0
-        font-size 1.6em  
+        font-size 1em  
         display block
         padding 20px 
         color black
@@ -352,6 +359,14 @@ input, select, textarea
         &:hover
             color red 
             opacity 0.6
+    .fa-pencil
+        right 40px
+        &:hover
+            color purp
+    .fa-close
+        color purp
+        &:hover
+            color purp
     .ingredient
         display inline-block
         margin-right 10px 
@@ -381,10 +396,11 @@ input, select, textarea
     padding 50px 5%
     list-style none
     li
-        font-size 2em 
+        font-size 1em 
         padding 20px
         border-bottom 1px solid light-grey
         border-top 1px solid light-grey
+        color dark-purp
         & + li 
             border-top none
 
